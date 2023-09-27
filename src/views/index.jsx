@@ -1,5 +1,3 @@
-import ExamplePage from "./examples/ExamplePage/ExamplePage";
+import ExamplePage from './examples/ExamplePage/ExamplePage';
 
-export {
-    ExamplePage
-};
+export { ExamplePage };

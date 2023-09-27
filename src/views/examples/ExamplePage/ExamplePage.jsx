@@ -1,5 +1,5 @@
 // local imports
-import { Example } from "../../../components";
+import { Example } from '../../../components';
 
 const ExamplePage = () => {
     return (
@@ -7,7 +7,7 @@ const ExamplePage = () => {
             <h1 className="text-lg text-white">Example Page</h1>
             <Example />
         </div>
-    )
-}
+    );
+};
 
-export default ExamplePage
+export default ExamplePage;

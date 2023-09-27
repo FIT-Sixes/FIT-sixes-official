@@ -7,7 +7,7 @@ const Router = () => {
     return useRoutes([
         {
             path: '/sample',
-            element: <ExamplePage/>
+            element: <ExamplePage />,
         },
     ]);
 };
