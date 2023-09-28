@@ -4,6 +4,9 @@ export default {
     mode: "jit",
     theme: {
         extend: {},
+        fontFamily: {
+
+        }
     },
     plugins: [],
 };
