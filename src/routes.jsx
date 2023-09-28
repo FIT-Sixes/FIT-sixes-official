@@ -1,7 +1,7 @@
 import { useRoutes } from 'react-router-dom';
 
 // local imports
-import { ExamplePage } from './views';
+import { ExamplePage, StepperExample } from './pages';
 
 const Router = () => {
     return useRoutes([
