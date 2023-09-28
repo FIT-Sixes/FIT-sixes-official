@@ -4,21 +4,21 @@ import { Stepper } from "../../../components"
 const StepperExample = () => {
     const steps = [
         {
-            label: "Step 1",
+            label: "Company Details",
             element: <div>Step 1 Content</div>
         },
         {
-            label: "Step 2",
+            label: "Players' Details",
             element: <div>Step 2 Content</div>
         },
         {
-            label: "Step 3",
+            label: "Payment Details",
             element: <div>Step 3 Content</div>
         }
     ];
 
     return (
-        <div className="w-[90%] m-auto">
+        <div className="p-5 m-auto container mx-auto">
             <Stepper
                 steps={steps}
             />

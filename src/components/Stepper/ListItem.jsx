@@ -11,7 +11,7 @@ export const ListItem = (props) => {
             className={`flex items-center ${id < currentStep ? 'after:bg-blue-500' : 'after:bg-gray-700'}
                 ${id === currentStep ? 'font-bold text-blue-300' : 'font-semibold'}
                 ${id < currentStep ? 'text-blue-500' : id > currentStep ? 'text-gray-500' : ''}
-                ${last ? "" : "sm:w-full after:content-[''] after:w-full after:h-0.5 after:rounded-2xl after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10"} 
+                ${last ? "" : "md:w-full max-toggleStepper:w-full after:content-[''] after:w-full after:h-0.5 after:rounded-2xl after:hidden md:after:inline-block max-toggleStepper:after:inline-block after:mx-6 xl:after:mx-10"} 
             `}
         >
             <span
@@ -21,10 +21,10 @@ export const ListItem = (props) => {
                 {id + 1}
             </span>
 
-            <span className="flex whitespace-nowrap">{label}</span>
+            <span className="flex whitespace-nowrap max-toggleStepper:hidden">{label}</span>
 
             {last ? <></> : <svg
-                className="inline-block w-3 h-3 ml-2 sm:hidden sm:ml-4"
+                className="inline-block w-3 h-3 ml-2 md:hidden text-gray-500 max-toggleStepper:hidden"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
