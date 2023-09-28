@@ -9,6 +9,10 @@ const Router = () => {
             path: '/sample',
             element: <ExamplePage />,
         },
+        {
+            path: '/stepper',
+            element: <StepperExample />,
+        },
     ]);
 };
 
