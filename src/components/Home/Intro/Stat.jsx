@@ -26,7 +26,7 @@ export default function Stat({ value, text, textSize, className }) {
     return (
         <div
             className={`grid text-[${textSize}] text-white font-semibold absolute 
-            border-l border-b border-blue-800  ${className}`}
+            bg-[url('/src/assets/stat_bg.png')]  ${className}`}
         >
             <span className="mx-1 -my-5">
                 <AnimatedNumbers value={value} />+
