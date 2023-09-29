@@ -1,13 +1,13 @@
 import { useRoutes } from 'react-router-dom';
 
 // local imports
-import { ExamplePage } from './pages';
+import Footer from './components/Footer/Footer';
 
 const Router = () => {
     return useRoutes([
         {
-            path: '/sample',
-            element: <ExamplePage />,
+            path: '/footer',
+            element: <Footer />,
         },
     ]);
 };
