@@ -9,16 +9,6 @@ const App = () => {
         <BrowserRouter>
             <div className="w-full bg-center bg-repeat-y bg-contain bg-gradient-pattern">
                 <Navbar />
-
-                {/* example sections */}
-                <section className="h-[100vh]"></section>
-                <section className="h-[100vh]"></section>
-                <section className="h-[100vh]"></section>
-                <section className="h-[100vh]"></section>
-                <section className="h-[100vh]"></section>
-                <section className="h-[100vh]"></section>
-                {/*  */}
-
                 <Router />
             </div>
         </BrowserRouter>

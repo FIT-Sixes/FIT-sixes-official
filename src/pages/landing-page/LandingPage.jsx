@@ -1,17 +1,20 @@
+// local imports
+import { Countdown } from "../../components";
+
 const LandingPage = () => {
     return (
         <>
-            <section name='hero'>{/* hero */}</section>
+            {/* example sections */}
+            
+            <section className="h-[100vh]"></section>
+            <section className="h-[100vh]"></section>
+            <section className="h-[100vh]"></section>
+            <section className="h-[100vh]"></section>
+            <section className="h-[100vh]"></section>
 
-            <section name='countdown'>{/* countdown */}</section>
-
-            <section name='about'>{/* about */}</section>
-
-            <section name='awards'>{/* awards */}</section>
-
-            <section name='teams'>{/* teams */}</section>
-
-            <section name='sponsors'>{/* sponsors */}</section>
+            <section id='countdown' className="h-[100vh]">
+                <Countdown />
+            </section>
         </>
     );
 };

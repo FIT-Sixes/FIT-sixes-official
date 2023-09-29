@@ -13,7 +13,7 @@ function Navbar() {
     const navItems = [
         {
             label: 'Live Score',
-            path: '#',
+            path: '#countdown',
         },
         {
             label: 'About',
@@ -63,7 +63,7 @@ function Navbar() {
             <div className="container mx-auto">
                 <div className="flex items-center justify-between">
                     <div className='flex items-center text-white'>
-                        <img src={LogoImg} alt="logo" className='w-[50px] p-1' />
+                        <img src={LogoImg} alt="logo" className='w-[50px] p-2' />
                         <h2 className="mx-4 text-2xl font-semibold uppercase">FIT Sixes 2K23</h2>
                     </div>
 
