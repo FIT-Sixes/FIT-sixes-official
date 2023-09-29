@@ -14,9 +14,9 @@ export default {
             }),
 
             colors: {
-                'gradient-top': '#07334E',
-                'gradient-middle': '#151632',
-                'gradient-bottom': '#151632',
+                'gradient-top': '#07334Efa',
+                'gradient-middle': '#151632fa',
+                'gradient-bottom': '#151632fa',
             },
         },
     },
