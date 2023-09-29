@@ -21,7 +21,7 @@ const Stepper = (props) => {
 
     return (
         <div className='flex flex-col lg:w-[80%] mx-auto'>
-            <ol className="flex items-center w-full mx-auto p-3 space-x-2 text-center rounded-lg shadow-sm sm:text-base dark:bg-gray-800 dark:border-gray-700 sm:p-4 sm:space-x-4">
+            <ol className="flex items-center w-full p-3 mx-auto space-x-2 text-center rounded-lg shadow-sm sm:text-base dark:bg-gray-800 dark:border-gray-700 sm:p-4 sm:space-x-4">
                 {steps.length > 0 && steps.map((step, index) =>
                     <ListItem
                         key={index}
@@ -34,7 +34,7 @@ const Stepper = (props) => {
             </ol>
 
             <div className="bg-[#1c3a6d] rounded-xl text-white my-2 border-[#5882C1] border-2">
-                <div className="w-full inline-flex items-center justify-center mt-2 toggleStepper:hidden text-2xl font-bold font-serif">
+                <div className="inline-flex items-center justify-center w-full mt-2 font-serif text-2xl font-bold toggleStepper:hidden">
                     {steps[currentStep].label}
                 </div>
 
@@ -46,7 +46,7 @@ const Stepper = (props) => {
             <div className="w-full xs:w-[70%] flex justify-between mx-auto">
                 <button
                     onClick={handlePrev}
-                    className="flex items-center justify-center w-32 px-4 mt-3 py-2 font-bold text-gray-700 bg-gray-200 rounded-3xl hover:bg-gray-300 disabled:text-gray-400"
+                    className="flex items-center justify-center w-32 px-4 py-2 mt-3 font-bold text-gray-700 bg-gray-200 rounded-3xl hover:bg-gray-300 disabled:text-gray-400"
                     disabled={currentStep === firstStep}
                 >
                     <svg
@@ -67,8 +67,12 @@ const Stepper = (props) => {
                     Previous
                 </button>
                 <button
-                    onClick={handleNext}
-                    className="flex items-center justify-center w-32 px-4 mt-3 py-2 font-bold text-white bg-blue-500 rounded-3xl hover:bg-blue-700"
+                    onClick={async () => {
+                        if (await steps[currentStep].onSubmit()) {
+                            handleNext();
+                        }
+                    }}
+                    className="flex items-center justify-center w-32 px-4 py-2 mt-3 font-bold text-white bg-blue-500 rounded-3xl hover:bg-blue-700"
                 >
                     {currentStep === lastStep ? "Submit" : (
                         <>
