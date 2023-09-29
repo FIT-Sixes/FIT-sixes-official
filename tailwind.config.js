@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: ["./src/**/*.{js,jsx}"],
-    mode: "jit",
+    content: ['./src/**/*.{js,jsx}'],
+    mode: 'jit',
     theme: {
         extend: {
             backgroundImage: (_theme_) => ({
@@ -11,7 +11,13 @@ export default {
                 "bg-top": "rgba(7, 51, 78, 0.8)",
                 "bg-middle": "rgba(21, 22, 50, 0.9)",
                 "bg-bottom": "rgba(21, 22, 50, 0.9)",
-            }
+            },
+            textColor: {
+                '00C2FF': '#00C2FF',
+            },
+            backgroundColor: {
+                '151632': '#151632',
+            },
         },
     },
     plugins: [],
