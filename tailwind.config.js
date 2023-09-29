@@ -12,12 +12,6 @@ export default {
                 "bg-middle": "rgba(21, 22, 50, 0.9)",
                 "bg-bottom": "rgba(21, 22, 50, 0.9)",
             },
-            textColor: {
-                '00C2FF': '#00C2FF',
-            },
-            backgroundColor: {
-                '151632': '#151632',
-            },
         },
     },
     plugins: [],

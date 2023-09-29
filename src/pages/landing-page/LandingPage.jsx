@@ -1,17 +1,17 @@
 const LandingPage = () => {
     return (
         <>
-            <section>{/* hero */}</section>
+            <section name='hero'>{/* hero */}</section>
 
-            <section>{/* countdown */}</section>
+            <section name='countdown'>{/* countdown */}</section>
 
-            <section>{/* about */}</section>
+            <section name='about'>{/* about */}</section>
 
-            <section>{/* awards */}</section>
+            <section name='awards'>{/* awards */}</section>
 
-            <section>{/* teams */}</section>
+            <section name='teams'>{/* teams */}</section>
 
-            <section>{/* sponsors */}</section>
+            <section name='sponsors'>{/* sponsors */}</section>
         </>
     );
 };

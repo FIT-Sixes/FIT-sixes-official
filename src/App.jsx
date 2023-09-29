@@ -2,14 +2,16 @@ import { BrowserRouter } from 'react-router-dom';
 
 // local imports
 import Router from './routes';
-import Navbar from './components/NavBar/Navbar';
+import { Navbar } from './components';
 
 const App = () => {
     return (
-        <BrowserRouter>
-            <Navbar/>
-            <Router />
-        </BrowserRouter>
+        <div className="bg-bg-bottom">
+            <BrowserRouter>
+                <Navbar />
+                <Router />
+            </BrowserRouter>
+        </div>
     );
 };
 
