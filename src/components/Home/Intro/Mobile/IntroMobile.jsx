@@ -7,7 +7,7 @@ export default function IntroMobile() {
                 <h1>The Annual Cricket Fiesta</h1>
                 <div className="inline-block mt-4 ">
                     <span className="text-blue-500 rounded-md bg-white">
-                        by FIT
+                        By FIT
                     </span>
                 </div>
                 <p className="text-xl m-4">

@@ -32,7 +32,7 @@ export default function Stat({ value, text, className }) {
             <span className="ml-3">
                 <AnimatedNumbers value={value} />+
             </span>
-            <span className={`text-[40%] -mt-3 ml-3`}>{text}</span>
+            <span className={`text-[40%] -mt-3  ml-3`}>{text}</span>
         </div>
     );
 }
@@ -41,10 +41,11 @@ export default function Stat({ value, text, className }) {
 export function StatMV({value, text, className}) {
     return (
         <div className='w-[37vw] h-[15vh] rounded-xl  mb-8 mx-4 flex items-center justify-center
-        bg-opacity-40 bg-blue-400 bg-blur-lg backdrop-blur-lg backdrop-filter '>
+        bg-cover bg-left-bottom bg-no-repeat '
+            style={{ backgroundImage: `url('/src/assets/stat_bg.png')` }}>
             <div className='flex flex-col text-white text-4xl justify-center items-center'>
                 <span><AnimatedNumbers value={value} />+</span>
-                <span>{text}</span>
+                <span className='mb-1'>{text}</span>
             </div>
         </div>
     );

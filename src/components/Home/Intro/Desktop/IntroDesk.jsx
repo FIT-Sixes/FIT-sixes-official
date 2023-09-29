@@ -18,7 +18,7 @@ export default function IntroDesk() {
                         <div>
                             <div className="text-5xl">
                                 <h1>The Annual Cricket Fiesta </h1>
-                                <h1 className="text-blue-500 mt-2">by FIT</h1>
+                                <h1 className="text-blue-500 mt-2">By FIT</h1>
                             </div>
                             <p className=" text-[1.2vw] my-8 w-[26vw]">
                                 Welcome to the official website of FIT SIXES,

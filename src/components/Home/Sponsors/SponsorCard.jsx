@@ -22,32 +22,32 @@ export default function SponsorCard({
     }, [sponsors]);
 
     return (
-        <div className="mx-2 flex flex-col items-center">
+        <div className="mx-2 flex flex-col items-center md:my-0 mb-10">
             <div
-                className={`bg-white h-[19vh] w-[22vw]  flex rounded-l-[100px] rounded-r-3xl 
+                className={`md:h-[19vh] md:w-[22vw] h-[20vh] w-[50vw]  bg-white flex rounded-l-[100px] rounded-r-3xl 
        ${!sponsors && 'backdrop-blur-lg bg-opacity-40'}
        ${logoClass}`}
             >
-                <img src={logoImg} alt={text} className="w-[8vw] h-[19vh]" />
+                <img src={logoImg} alt={text} className="  md:w-[8vw] md:h-[19vh] w-[14vw] h-[20vh]" />
                 {sponsors?.length > 0 ? (
                     <AnimatePresence>
                         <motion.img
                             key={currentSponsorIndex}
                             src={sponsors[currentSponsorIndex]}
                             alt={text}
-                            className={`object-contain w-[12vw] m-auto ${sponsorClass}`}
+                            className={`object-contain md:w-[12vw] w-[25vw] m-auto ${sponsorClass}`}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                         />
                     </AnimatePresence>
                 ) : (
-                    <span className=" m-auto flex text-white text-[1.5vw]">
+                    <span className=" m-auto flex text-white text-xl">
                         Introducing Soon
                     </span>
                 )}
             </div>
-            <span className="mt-4 ml-10 text-xl text-white ">{text}</span>
+            <span className="md:mt-4 md:ml-10 my-2 text-xl text-white ">{text}</span>
         </div>
     );
 }
