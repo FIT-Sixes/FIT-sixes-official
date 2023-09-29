@@ -5,7 +5,7 @@ export default {
     theme: {
         extend: {
             backgroundImage: (theme) => ({
-                'gradient-linear': `linear-gradient(
+                'gradient-pattern': `linear-gradient(
                     to bottom,
                     ${theme('colors.gradient-top')} 3.65%, 
                     ${theme('colors.gradient-middle')} 20.31%, 
