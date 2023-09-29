@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 // local imports
-import LogoImg from '../../assets/images/logo 2.png';
+import LogoImg from '../../assets/images/logo.png';
 import cross from '../../assets/cross.png'
 import hamburger from '../../assets/burger.png';
 
