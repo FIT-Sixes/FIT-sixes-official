@@ -4,13 +4,18 @@ export default {
     mode: 'jit',
     theme: {
         extend: {
-            backgroundImage: (_theme_) => ({
-                "back-image": "url('/src/assets/background.png')",
+            backgroundImage: (theme) => ({
+                'gradient-pattern': `linear-gradient(
+                    to bottom,
+                    ${theme('colors.gradient-top')} 3.65%, 
+                    ${theme('colors.gradient-middle')} 20.31%, 
+                    ${theme('colors.gradient-bottom')} 100%
+                ), url(./src/assets/pattern.webp);`,
             }),
             colors: {
-                "bg-top": "rgba(7, 51, 78, 0.8)",
-                "bg-middle": "rgba(21, 22, 50, 0.9)",
-                "bg-bottom": "rgba(21, 22, 50, 0.9)",
+                'gradient-top': '#07334Efa',
+                'gradient-middle': '#151632fa',
+                'gradient-bottom': '#151632fa',
             },
         },
     },
