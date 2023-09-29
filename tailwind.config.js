@@ -12,7 +12,6 @@ export default {
                     ${theme('colors.gradient-bottom')} 100%
                 ), url(./src/assets/pattern.webp);`,
             }),
-
             colors: {
                 'gradient-top': '#07334Efa',
                 'gradient-middle': '#151632fa',
