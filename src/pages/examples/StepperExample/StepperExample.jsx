@@ -1,11 +1,12 @@
 // local imports
 import { Stepper } from "../../../components"
+import CompanyForm from "../../../components/CompanyForm/CompanyForm";
 
 const StepperExample = () => {
     const steps = [
         {
-            label: "Company Details",
-            element: <div>Step 1 Content</div>
+            label: "Step 1",
+            element: <CompanyForm/>
         },
         {
             label: "Players' Details",
