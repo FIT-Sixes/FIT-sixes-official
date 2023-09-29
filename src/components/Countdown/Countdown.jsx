@@ -1,4 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
+import {AnimatePresence, motion} from "framer-motion"
+
 const Countdown = () => {
     const [countDownTime, setCountDownTIme] = useState({
         days: "00",
@@ -7,14 +9,15 @@ const Countdown = () => {
         seconds: "00",
     });
 
+    const [timeCountingSeconds, setTimeCountingSeconds] = useState({});
+    const [timeCountingMinutes, setTimeCountingMinutes] = useState(false);
+
     /**
      * take the time difference of the end date and the current date
      * @param countDownTime
      */
     const getTimeDifference = (countDownTime) => {
         const currentTime = new Date().getTime();
-        // console.log(currentTime);
-
         const timeDiffrence = countDownTime - currentTime;
         let days =
             Math.floor(timeDiffrence / (24 * 60 * 60 * 1000)) >= 10
@@ -59,7 +62,6 @@ const Countdown = () => {
      */
     const startCountDown = useCallback(() => {
         const customDate = new Date(2023, 9, 21);
-        // const customDate = eastern.toLocaleString("en-US", {timeZone: "America/New_York"});
 
         const countDownDate = new Date(
             customDate.getFullYear(),
@@ -73,36 +75,88 @@ const Countdown = () => {
             getTimeDifference(countDownDate.getTime());
         }, 1000);
     }, []);
+
     useEffect(() => {
         startCountDown();
     }, [startCountDown]);
+
+    useEffect(() => {
+        console.log("HI")
+        setTimeCountingSeconds({
+            initial: { y: -25, opacity: 0 },
+            animate: { y: 0, opacity: 1 },
+            // exit: { opacity: 0, y:15 }, // Define an exit state to reset the animation
+            transition: { duration: 1},
+        })
+    }, [countDownTime.seconds]);
+
+    useEffect(() => {
+        console.log("hello")
+        setTimeCountingMinutes(true);
+    }, [countDownTime.minutes]);
+
+    /**
+     * animations
+     */
+    // timeCountingTime = ;
+
+    const animationKey = Math.random(); // Generate a random key to force a re-mount
+
     return (
         <div className="bg-[#191A24] h-screen">
             <div className="flex flex-col items-center justify-center w-full h-full gap-8 sm:gap-16">
-                <span className="text-2xl sm:text-3xl font-semibold text-white text-center tracking-widest px-2">FIT Sixes starts in...</span>
+                <motion.span
+                    className="text-2xl sm:text-3xl font-semibold text-white text-center tracking-widest px-2"
+                    initial={{ y: -100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    >
+                    FIT Sixes starts in...
+                </motion.span>
                 <div className="flex justify-center gap-3 sm:gap-8">
                     <div className="flex flex-col gap-5 relative">
                         <div className="h-16 w-16 sm:w-32 sm:h-32 lg:w-40 lg:h-40 flex flex-col items-center justify-center bg-[#343650] rounded-3xl">
                             <span className="lg:text-9xl sm:text-6xl text-3xl font-semibold text-[#a5b4fc]">{countDownTime?.days}</span>
-                            <span className="text-[#8486A9] text-xs sm:text-1xl text-center capitalize">{countDownTime?.days == 1 ? "Day" : "Days"}</span>
+                            <span className="text-[#8486A9] text-xs sm:text-1xl text-center capitalize">{countDownTime?.days === 1 ? "Day" : "Days"}</span>
                         </div>
                     </div>
                     <div className="flex flex-col gap-5 relative">
                         <div className="h-16 w-16 sm:w-32 sm:h-32 lg:w-40 lg:h-40 flex flex-col items-center justify-center bg-[#343650] rounded-3xl">
                             <span className="lg:text-9xl sm:text-6xl text-3xl font-semibold text-[#a5b4fc]">{countDownTime?.hours}</span>
-                            <span className="text-[#8486A9] text-xs sm:text-1xl text-center capitalize">{countDownTime?.hours == 1 ? "Hour" : "Hours"}</span>
+                            <span className="text-[#8486A9] text-xs sm:text-1xl text-center capitalize">{countDownTime?.hours === 1 ? "Hour" : "Hours"}</span>
                         </div>
                     </div>
                     <div className="flex flex-col gap-5 relative">
                         <div className="h-16 w-16 sm:w-32 sm:h-32 lg:w-40 lg:h-40 flex flex-col items-center justify-center bg-[#343650] rounded-3xl">
-                            <p className="lg:text-9xl sm:text-6xl text-3xl font-semibold text-[#a5b4fc]">{countDownTime?.minutes}</p>
-                            <p className="text-[#8486A9] text-xs sm:text-1xl text-center capitalize">{countDownTime?.minutes == 1 ? "Minute" : "Minutes"}</p>
+                            <motion.span
+                                className="lg:text-9xl sm:text-6xl text-3xl font-semibold text-[#a5b4fc]"
+                                variants={timeCountingMinutes}
+                                key={animationKey}
+                                initial="initial"
+                                animate="animate"
+                                transition="transition"
+                            >
+                                {countDownTime?.minutes}
+                            </motion.span>
+                            <motion.span className="text-[#8486A9] text-xs sm:text-1xl text-center capitalize">{countDownTime?.minutes === 1 ? "Minute" : "Minutes"}</motion.span>
                         </div>
                     </div>
                     <div className="flex flex-col gap-5 relative">
                         <div className="h-16 w-16 sm:w-32 sm:h-32 lg:w-40 lg:h-40 flex flex-col items-center justify-center bg-[#343650] rounded-3xl">
-                            <span className="lg:text-9xl sm:text-6xl text-3xl font-semibold text-[#a5b4fc]">{countDownTime?.seconds}</span>
-                            <span className="text-[#8486A9] text-xs sm:text-1xl text-center capitalize">{countDownTime?.seconds == 1 ? "Second" : "Seconds"}</span>
+                            {/*<AnimatePresence>*/}
+                                <motion.span
+                                    className="lg:text-9xl sm:text-6xl text-3xl font-semibold text-[#a5b4fc]"
+                                    variants={timeCountingSeconds}
+                                    key={animationKey}
+                                    initial="initial"
+                                    animate="animate"
+                                    transition="transition"
+                                    // exit="exit"
+                                >
+                                    {countDownTime?.seconds}
+                                </motion.span>
+                            {/*</AnimatePresence>*/}
+                            <span className="text-[#8486A9] text-xs sm:text-1xl text-center capitalize">{countDownTime?.seconds === 1 ? "Second" : "Seconds"}</span>
                         </div>
                     </div>
                 </div>
