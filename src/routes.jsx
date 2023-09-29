@@ -1,6 +1,6 @@
 import { useRoutes } from 'react-router-dom';
 
-// local imports
+// local imports 
 import { ExamplePage, LandingPage } from './pages';
 
 const Router = () => {
