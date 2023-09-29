@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-import {AnimatePresence, motion} from "framer-motion"
+import { motion } from "framer-motion"
+import image from "../../assets/images.jpeg";
 
 const Countdown = () => {
     const [countDownTime, setCountDownTIme] = useState({
@@ -111,7 +112,7 @@ const Countdown = () => {
 
     return (
         /* whole container */
-        <div className="bg-[#191A24] h-screen">
+        <div className="bg-[#191A24] h-screen" style={{ backgroundImage: `url(${image})`}}>
             {/*whole container 2*/}
             <div className="flex flex-col items-center justify-center w-full h-full gap-8 sm:gap-16">
 
@@ -130,9 +131,9 @@ const Countdown = () => {
 
                     {/* 1st box */}
                     <div className="flex gap-5 relative">
-                        <div className="h-16 w-16 sm:w-32 sm:h-32 lg:w-40 lg:h-40 flex flex-col items-center justify-center bg-[#343650] rounded-xl lg:rounded-3xl border-cyan-400">
+                        <div className="h-40 w-40 sm:w-32 sm:h-32 lg:w-40 lg:h-40 flex flex-col items-center justify-center bg-[#343650] rounded-xl lg:rounded-3xl border-2 border-cyan-400 backdrop-filter backdrop-blur-sm bg-opacity-20">
                             { (timeCountingDays) ? <motion.span
-                                    className="lg:text-9xl sm:text-6xl text-3xl font-semibold text-[#a5b4fc]"
+                                    className="lg:text-9xl sm:text-6xl text-9xl font-semibold text-[#FFFFFF] border-cyan-400"
                                     variants={timeCountingSeconds}
                                     key={animationKey}
                                     initial="initial"
@@ -141,19 +142,19 @@ const Countdown = () => {
                                 >
                                     {countDownTime?.days}
                                 </motion.span>
-                                : <span className="lg:text-9xl sm:text-6xl text-3xl font-semibold text-[#a5b4fc]">
+                                : <span className="lg:text-9xl sm:text-6xl text-9xl font-semibold text-[#FFFFFF] border-cyan-400">
                                     {countDownTime?.days}
                                  </span>
                             }
-                            <span className="text-[#8486A9] text-xs sm:text-1xl text-center capitalize">{countDownTime?.days === 1 ? "Day" : "Days"}</span>
+                            <span className="text-[#FFFFFF] text-xs sm:text-1xl text-center capitalize">{countDownTime?.days === 1 ? "Day" : "Days"}</span>
                         </div>
                     </div>
 
                     {/* 2nd box */}
                     <div className="flex flex-col gap-5 relative">
-                        <div className="h-16 w-16 sm:w-32 sm:h-32 lg:w-40 lg:h-40 flex flex-col items-center justify-center bg-[#343650] rounded-xl lg:rounded-3xlborder-cyan-400">
+                        <div className="h-40 w-40 sm:w-32 sm:h-32 lg:w-40 lg:h-40 flex flex-col items-center justify-center bg-[#343650] rounded-xl lg:rounded-3xl border-2 border-cyan-400 backdrop-filter backdrop-blur-sm bg-opacity-20">
                             { (timeCountingHours) ? <motion.span
-                                    className="lg:text-9xl sm:text-6xl text-3xl font-semibold text-[#a5b4fc]"
+                                    className="lg:text-9xl sm:text-6xl text-9xl font-semibold text-[#FFFFFF] border-cyan-400"
                                     variants={timeCountingSeconds}
                                     key={animationKey}
                                     initial="initial"
@@ -162,19 +163,19 @@ const Countdown = () => {
                                 >
                                     {countDownTime?.hours}
                                 </motion.span>
-                                : <span className="lg:text-9xl sm:text-6xl text-3xl font-semibold text-[#a5b4fc]">
+                                : <span className="lg:text-9xl sm:text-6xl text-9xl font-semibold text-[#FFFFFF] border-cyan-400">
                                     {countDownTime?.hours}
                                  </span>
                             }
-                            <span className="text-[#8486A9] text-xs sm:text-1xl text-center capitalize">{countDownTime?.hours === 1 ? "Hour" : "Hours"}</span>
+                            <span className="text-[#FFFFFF] text-xs sm:text-1xl text-center capitalize">{countDownTime?.hours === 1 ? "Hour" : "Hours"}</span>
                         </div>
                     </div>
 
                     {/* 3rd box */}
                     <div className="flex flex-col gap-5 relative">
-                        <div className="h-16 w-16 sm:w-32 sm:h-32 lg:w-40 lg:h-40 flex flex-col items-center justify-center bg-[#343650] rounded-xl lg:rounded-3xl border-cyan-400">
+                        <div className="h-40 w-40 sm:w-32 sm:h-32 lg:w-40 lg:h-40 flex flex-col items-center justify-center bg-[#343650] rounded-xl lg:rounded-3xl border-2 border-cyan-400 backdrop-filter backdrop-blur-sm bg-opacity-20">
                             { (timeCountingMinutes) ? <motion.span
-                                    className="lg:text-9xl sm:text-6xl text-3xl font-semibold text-[#a5b4fc]"
+                                    className="lg:text-9xl sm:text-6xl text-9xl font-semibold text-[#FFFFFF] border-cyan-400"
                                     variants={timeCountingSeconds}
                                     key={animationKey}
                                     initial="initial"
@@ -183,19 +184,19 @@ const Countdown = () => {
                                 >
                                     {countDownTime?.minutes}
                                 </motion.span>
-                                 : <span className="lg:text-9xl sm:text-6xl text-3xl font-semibold text-[#a5b4fc]">
+                                 : <span className="lg:text-9xl sm:text-6xl text-9xl font-semibold text-[#FFFFFF] border-cyan-400">
                                     {countDownTime?.minutes}
                                  </span>
                             }
-                            <motion.span className="text-[#8486A9] text-xs sm:text-1xl text-center capitalize">{countDownTime?.minutes === 1 ? "Minute" : "Minutes"}</motion.span>
+                            <motion.span className="text-[#FFFFFF] text-xs sm:text-1xl text-center capitalize">{countDownTime?.minutes === 1 ? "Minute" : "Minutes"}</motion.span>
                         </div>
                     </div>
 
                     {/* 4th box */}
-                    <div className="flex flex-col gap-5 relative">
-                        <div className="h-16 w-16 sm:w-32 sm:h-32 lg:w-40 lg:h-40 flex flex-col items-center justify-center bg-[#343650] rounded-xl lg:rounded-3xl border-cyan-400">
+                    <div className="flex flex-col relative ">
+                        <div className="h-40 w-40 sm:w-32 sm:h-32 lg:w-40 lg:h-40 flex flex-col items-center justify-center bg-[#343650] rounded-xl lg:rounded-3xl border-2 border-cyan-400 backdrop-filter backdrop-blur-sm bg-opacity-20">
                                 <motion.span
-                                    className="lg:text-9xl sm:text-6xl text-3xl font-semibold text-[#a5b4fc] border-cyan-400"
+                                    className="lg:text-9xl sm:text-6xl text-9xl font-semibold text-[#FFFFFF] border-cyan-400"
                                     variants={timeCountingSeconds}
                                     key={animationKey}
                                     initial="initial"
@@ -204,7 +205,7 @@ const Countdown = () => {
                                 >
                                     {countDownTime?.seconds}
                                 </motion.span>
-                            <span className="text-[#8486A9] text-xs sm:text-1xl text-center capitalize">{countDownTime?.seconds === 1 ? "Second" : "Seconds"}</span>
+                            <span className="text-[#FFFFFF] text-xs sm:text-1xl text-center capitalize">{countDownTime?.seconds === 1 ? "Second" : "Seconds"}</span>
                         </div>
                     </div>
 
