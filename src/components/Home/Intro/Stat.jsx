@@ -19,19 +19,38 @@ const AnimatedNumbers = ({ value }) => {
         });
     }, [springValue, value]);
 
-    return <span ref={ref} className=""></span>;
+    return <span ref={ref}></span>;
 };
 
-export default function Stat({ value, text, textSize, className }) {
+export default function Stat({ value, text, className }) {
     return (
         <div
-            className={`grid text-[${textSize}] text-white font-semibold absolute 
-            bg-[url('/src/assets/stat_bg.png')]  ${className}`}
+            className={`flex flex-col text-white font-semibold absolute 
+             bg-cover bg-left-bottom bg-no-repeat  ${className}`}
+            style={{ backgroundImage: `url('/src/assets/stat_bg.png')` }}
         >
-            <span className="mx-1 -my-5">
+            <span className="ml-3">
                 <AnimatedNumbers value={value} />+
             </span>
-            <span className={`text-[40%] mx-1 my-0`}>{text}</span>
+            <span className={`text-[40%] -mt-3 ml-3`}>{text}</span>
         </div>
     );
 }
+
+
+export function StatMV({value, text, className}) {
+    return (
+        <div className='w-[37vw] h-[15vh] rounded-xl  mb-8 mx-4 flex items-center justify-center
+        bg-opacity-40 bg-blue-400 bg-blur-lg backdrop-blur-lg backdrop-filter '>
+            <div className='flex flex-col text-white text-4xl justify-center items-center'>
+                <span><AnimatedNumbers value={value} />+</span>
+                <span>{text}</span>
+            </div>
+        </div>
+    );
+}
+
+
+
+
+
