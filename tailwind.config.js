@@ -1,9 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: ["./src/**/*.{js,jsx}"],
-    mode: "jit",
+    content: ['./src/**/*.{js,jsx}'],
+    mode: 'jit',
     theme: {
-        extend: {},
+        extend: {
+            backgroundImage: (theme) => ({
+                'gradient-linear': `linear-gradient(
+                    to bottom,
+                    ${theme('colors.gradient-top')} 3.65%, 
+                    ${theme('colors.gradient-middle')} 20.31%, 
+                    ${theme('colors.gradient-bottom')} 100%
+                );`,
+            }),
+
+            colors: {
+                'gradient-top': '#07334E',
+                'gradient-middle': '#151632',
+                'gradient-bottom': '#151632',
+            },
+        },
     },
     plugins: [],
 };
