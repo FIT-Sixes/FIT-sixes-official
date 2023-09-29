@@ -10,7 +10,7 @@ export default {
                     ${theme('colors.gradient-top')} 3.65%, 
                     ${theme('colors.gradient-middle')} 20.31%, 
                     ${theme('colors.gradient-bottom')} 100%
-                );`,
+                ), url(./src/assets/pattern.webp);`,
             }),
 
             colors: {
