@@ -3,7 +3,7 @@ import { Countdown, Hero, Intro, Awards, Sponsors } from "../../components";
 
 const LandingPage = () => {
     return (
-        <>
+        <div>
             {/* example sections */}
             
             <section id='hero' className="h-screen">
@@ -29,7 +29,7 @@ const LandingPage = () => {
             <section id='sponsors' className="h-screen">
                 <Sponsors />
             </section>            
-        </>
+        </div>
     );
 };
 

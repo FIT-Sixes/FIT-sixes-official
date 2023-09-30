@@ -5,6 +5,7 @@ import logo from '../../assets/footer-logo.png';
 const Footer = () => {
     return (
         <footer className='bg-[#151632] bg-opacity-[0.47] pt-19 h-600 '>
+            <div className="w-full h-1 bg-[#0AB7C2]"></div>
 
             <div className='container'>
                 <div className='items-center justify-between pt-6 sm:flex md:gap-8'>

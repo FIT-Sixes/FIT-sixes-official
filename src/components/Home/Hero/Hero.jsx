@@ -5,7 +5,7 @@ import Trophy from './Trophy';
 
 const Hero = () => {
     return (
-        <div className='flex flex-col items-end min-h-screen text-white hero-background'>
+        <div className='flex flex-col items-end h-screen min-h-screen text-white hero-background'>
             <Canvas>
                 <ambientLight />
                 <pointLight position={[0, 0, -1]} />
@@ -26,7 +26,6 @@ const Hero = () => {
                 </button>
             </div>
         </div>
-
     );
 };
 
