@@ -15,11 +15,10 @@ const FileUpload = (props) => {
         dashColorOnDrag = '#00ff00',
         maxFileSize = MAX_FILE_SIZE,
         selectedFiles,
-        setSelectedFiles
+        setSelectedFiles,
+        singleFile = false,
     } = props;
 
-    // properties / states for storing selected files
-    // const [selectedFiles, setSelectedFiles] = useState([]);
     const [message, setMessage] = useState('');
 
     const [overLimitFileCount, setOverLimitFileCount] = useState(0);
@@ -27,7 +26,6 @@ const FileUpload = (props) => {
     const [disableUpload, setDisableUpload] = useState(false);
     const inputRef = useRef(null);
 
-    // properties / states for drag and drop
     const [dragActive, setDragActive] = useState(false);
 
     useEffect(() => {
@@ -102,9 +100,10 @@ const FileUpload = (props) => {
 
                     if (size > maxFileSize) {
                         setMessage(`File size is exceeding size limit of ${maxFileSize} MB`);
-                        // setOverLimitFileCount(overLimitFileCount + 1);
 
-                        break;
+                        if (singleFile) break;
+
+                        setOverLimitFileCount(overLimitFileCount + 1);
                     }
 
                     reader.onload = (event) => {
@@ -144,7 +143,7 @@ const FileUpload = (props) => {
                     </p>
                 }
 
-                {selectedFiles.length > 0 ? (
+                {selectedFiles.length > 0 && (
                     <div className='flex border-b-black'>
                         {selectedFiles.map((item, index) => (
                             <div key={index} className='relative inline-blok justify-center mr-2 w-[100px]'>
@@ -179,7 +178,9 @@ const FileUpload = (props) => {
                             </div>
                         ))}
                     </div>
-                ) : (
+                )}
+
+                {(!singleFile || (singleFile && selectedFiles.length) <= 0) && (
                     <div className='flex justify-center'>
                         <div className='flex flex-col items-center justify-center space-y-1'>
                             <img
@@ -202,7 +203,7 @@ const FileUpload = (props) => {
                             ref={inputRef}
                             style={{ display: 'none' }}
                             onChange={(e) => handleFileInput(e.target.files)}
-                            // multiple
+                            multiple={!singleFile}
                             accept='.pdf, .png, .jpg, .jpeg'
                         />
                     </div>

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { ListItem } from './ListItem';
 
 const Stepper = (props) => {
-    const { steps } = props;
+    const { steps, clearForms } = props;
 
     const [currentStep, setCurrentStep] = useState(0);
 
@@ -70,6 +70,10 @@ const Stepper = (props) => {
                     onClick={async () => {
                         if (await steps[currentStep].onSubmit()) {
                             handleNext();
+
+                            if (currentStep === lastStep) {
+                                clearForms();
+                            }
                         }
                     }}
                     className="flex items-center justify-center w-32 px-4 py-2 mt-3 font-bold text-white bg-blue-500 rounded-3xl hover:bg-blue-700"

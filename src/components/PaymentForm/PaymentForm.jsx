@@ -1,22 +1,29 @@
-import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import { Toaster } from 'react-hot-toast';
 
 // local imports
 import FileUpload from "../FileUpload/FileUpload";
 import './Styles.css';
 
-const PaymentForm = () => {
-    const [slip, setSlip] = useState([]);
-    const [accept, setAccept] = useState(false);
+const PaymentForm = (props) => {
+    const {
+        slip = [],
+        setSlip,
+        accept = false,
+        setAccept,
+        singleFile = false,
+        reCaptcha
+    } = props;
 
     return (
         <div className="text-white">
             <form>
-                <p>Upload the Slip *</p>
+                <p>Upload the Slip <span className="text-red-600">*</span></p>
 
                 <FileUpload
                     selectedFiles={slip}
                     setSelectedFiles={setSlip}
+                    singleFile={singleFile}
                 />
 
                 <p>Terms and Conditions</p>
@@ -40,19 +47,22 @@ const PaymentForm = () => {
                     <input
                         id="accept"
                         type="checkbox"
-                        value={accept}
+                        checked={accept}
                         onChange={(e) => setAccept(e.target.checked)}
                         className="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
                     />
                     <label htmlFor="accept">
-                        I agree with the terms and conditions *
+                        I agree with the terms and conditions <span className="text-red-600">*</span>
                     </label>
                 </div>
 
-                <ReCAPTCHA sitekey={'6Leyw2AoAAAAADPg-oZExG3-sXIpaHcODd0ogsN2'} />
+                <div className="flex justify-center">
+                    <ReCAPTCHA ref={reCaptcha} sitekey={'6Leyw2AoAAAAADPg-oZExG3-sXIpaHcODd0ogsN2'} />
+                </div>
             </form>
+            <Toaster />
         </div>
     )
 }
 
-export default PaymentForm
+export default PaymentForm;

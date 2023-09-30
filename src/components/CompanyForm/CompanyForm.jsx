@@ -46,7 +46,7 @@ const CompanyForm = (props) => {
 
                 <label className="block mb-4">
                     <span>
-                        Contact Person <span className="text-red-600 ">  *</span>
+                        Contact Person <span className="text-red-600 "> *</span>
                     </span>
                     <input
                         name="contactPerson"

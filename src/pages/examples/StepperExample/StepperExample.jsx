@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import toast from 'react-hot-toast';
 
 // local imports
-import { Stepper, CompanyForm } from "../../../components"
+import { Stepper, CompanyForm, PaymentForm } from "../../../components"
 
 const StepperExample = () => {
+    const reCaptcha = useRef();
+
     const [companyDetails, setCompanyDetails] = useState({
         companyName: '',
         contactPerson: '',
@@ -15,7 +17,10 @@ const StepperExample = () => {
         registeredSponsor: false,
     });
 
-    const clearCompanyForm = () => {
+    const [slip, setSlip] = useState([]);
+    const [accept, setAccept] = useState(false);
+
+    const clearForms = () => {
         setCompanyDetails({
             companyName: '',
             contactPerson: '',
@@ -25,17 +30,19 @@ const StepperExample = () => {
             sponsorshipLevel: '',
             registeredSponsor: false,
         });
+
+        setSlip([]);
+        setAccept(false);
+        reCaptcha.current.reset();
     };
 
     const handleCompanySubmit = async () => {
-        console.log(companyDetails);
-
         if (
             companyDetails.companyName === '' ||
             companyDetails.contactPerson === '' ||
             companyDetails.contactPersonEmail === '' ||
             companyDetails.companyAddress === '' ||
-            companyDetails.sponsorshipLevel === ''
+            (companyDetails.registeredSponsor && companyDetails.sponsorshipLevel === '')
         ) {
             toast.error('Please fill all the fields');
         } else if (companyDetails.mobileNumber.length !== 10) {
@@ -47,9 +54,23 @@ const StepperExample = () => {
         ) {
             toast.error('Please enter a valid email address');
         } else {
-            toast.success('Successfully  register!');
-            clearCompanyForm();
+            return true;
+        }
 
+        return false;
+    };
+
+    const handlePaymentSubmit = () => {
+        const captchaValue = reCaptcha.current.getValue();
+
+        if (slip.length === 0) {
+            toast.error('Please upload the slip');
+        } else if (!accept) {
+            toast.error('Please accept the terms and conditions');
+        }
+        else if (!captchaValue) {
+            toast.error("Please verify the reCaptcha!");
+        } else {
             return true;
         }
 
@@ -65,12 +86,19 @@ const StepperExample = () => {
         {
             label: "Players' Details",
             element: <div>Step 2 Content</div>,
-            onSubmit: () => console.log("Step 2 submitted")
+            onSubmit: () => { console.log("Step 2 submitted"); return true; }
         },
         {
             label: "Payment Details",
-            element: <div>Step 3 Content</div>,
-            onSubmit: () => console.log("Step 3 submitted")
+            element: <PaymentForm
+                singleFile={true}
+                slip={slip}
+                setSlip={setSlip}
+                accept={accept}
+                setAccept={setAccept}
+                reCaptcha={reCaptcha}
+            />,
+            onSubmit: handlePaymentSubmit
         }
     ];
 
@@ -78,9 +106,10 @@ const StepperExample = () => {
         <div className="container p-5 m-auto mx-auto">
             <Stepper
                 steps={steps}
+                clearForms={clearForms}
             />
         </div>
     )
 }
 
-export default StepperExample
+export default StepperExample;
