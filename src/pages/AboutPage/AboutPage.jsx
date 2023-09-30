@@ -12,10 +12,12 @@ const AboutPage = () => {
 
     return (
         <div className="px-4 py-2 m-2 font-bold rounded-lg bg-slate-900">
-            <h1 className="text-lg text-white">Top Section</h1>
-
-            <CarouselCustom imageUrls={imageUrls} />
-            <TextAndImg text={textContent} imageUrl={imageURL} />
+            <section>{/*Hero*/}</section>
+            <section>
+                <CarouselCustom imageUrls={imageUrls} />
+                <TextAndImg text={textContent} imageUrl={imageURL} />
+            </section>
+            <section>{/*History*/}</section>
         </div>
     );
 };

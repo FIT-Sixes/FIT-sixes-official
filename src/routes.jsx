@@ -21,10 +21,6 @@ const Router = () => {
             path: '/contact-us',
             element: <ContactUsPage />,
         },
-        {
-            path: '/about',
-            element: <AboutPage />,
-        },
     ]);
 };
 
