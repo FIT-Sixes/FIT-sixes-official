@@ -1,4 +1,4 @@
 import ExamplePage from './examples/ExamplePage/ExamplePage';
-import LandingPage from './landing-page/LandingPage';
+import LandingPage from './LandingPage/LandingPage';
 
 export { ExamplePage, LandingPage };

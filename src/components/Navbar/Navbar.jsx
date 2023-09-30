@@ -59,7 +59,7 @@ function Navbar() {
         : 'bg-transparent px-4';
 
     return (
-        <nav className={navbarClass}>
+        <nav className={`${navbarClass} z-10`}>
             <div className="container mx-auto">
                 <div className="flex items-center justify-between">
                     <div className='flex items-center text-white'>
