@@ -1,6 +1,7 @@
 import Example from './Example/Example';
 import Navbar from './NavBar/Navbar';
 import Footer from "./Footer/Footer";
+import ContactCard from './ContactCard/ContactCard';
 
 // components for landing page
 import Hero from './Home/Hero/Hero';
@@ -9,4 +10,4 @@ import Awards from './Home/Awards/Awards';
 import Sponsors from './Home/Sponsors/Sponsors';
 import Countdown from "./Home/Countdown/Countdown";
 
-export { Example, Navbar, Hero, Intro, Awards, Sponsors, Countdown, Footer };
+export { Example, Navbar, Hero, Intro, Awards, Sponsors, Countdown, Footer, ContactCard };
