@@ -6,8 +6,7 @@ function TextAndImg({ text, imageUrl }) {
       {/* Left Half (Text) */}
       <div className="w-full md:w-1/2 p-4">
         <div className="text-center md:text-left">
-          <h2 className="text-2xl font-bold mb-2">Left Half</h2>
-          <p className="text-gray-700">{text}</p>
+          <p className="text-white">{text}</p>
         </div>
       </div>
 
