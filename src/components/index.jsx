@@ -1,5 +1,5 @@
 import Example from './Example/Example';
-import Countdown from "./Countdown/Countdown.jsx";
+import Navbar from './NavBar/Navbar';
+import Countdown from "./Countdown/Countdown";
 
-export { Example };
-export { Countdown };
+export { Example, Navbar, Countdown };

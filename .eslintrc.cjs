@@ -18,6 +18,19 @@ module.exports = {
             { allowConstantExport: true },
         ],
         'react/prop-types': 'off',
-        'no-unused-vars': 'warn',
+        "no-unused-vars": [
+			"warn",
+			{
+				"vars": "all", // all | local | none
+
+				"varsIgnorePattern": "[iI]gnored", // ignore unused vars containing "ignored"
+
+				"args": "all", // all | after-used | none
+
+				"argsIgnorePattern": "^_", // ignore unused args starting with _
+
+				"ignoreRestSiblings": false
+			}
+		],
     },
 }

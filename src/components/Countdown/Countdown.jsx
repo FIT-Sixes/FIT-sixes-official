@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion"
 import image from "../../assets/images.jpeg";
 
+
 const Countdown = () => {
     const [countDownTime, setCountDownTIme] = useState({
         days: "00",
@@ -21,27 +22,29 @@ const Countdown = () => {
      */
     const getTimeDifference = (countDownTime) => {
         const currentTime = new Date().getTime();
-        const timeDiffrence = countDownTime - currentTime;
+
+        const timeDifference = countDownTime - currentTime;
+
         let days =
-            Math.floor(timeDiffrence / (24 * 60 * 60 * 1000)) >= 10
-                ? Math.floor(timeDiffrence / (24 * 60 * 60 * 1000))
-                : `0${Math.floor(timeDiffrence / (24 * 60 * 60 * 1000))}`;
+            Math.floor(timeDifference / (24 * 60 * 60 * 1000)) >= 10
+                ? Math.floor(timeDifference / (24 * 60 * 60 * 1000))
+                : `0${Math.floor(timeDifference / (24 * 60 * 60 * 1000))}`;
         const hours =
-            Math.floor((timeDiffrence % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60)) >=
-            10
-                ? Math.floor((timeDiffrence % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60))
+            Math.floor((timeDifference % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60)) >=
+                10
+                ? Math.floor((timeDifference % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60))
                 : `0${Math.floor(
-                    (timeDiffrence % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60)
+                    (timeDifference % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60)
                 )}`;
         const minutes =
-            Math.floor((timeDiffrence % (60 * 60 * 1000)) / (1000 * 60)) >= 10
-                ? Math.floor((timeDiffrence % (60 * 60 * 1000)) / (1000 * 60))
-                : `0${Math.floor((timeDiffrence % (60 * 60 * 1000)) / (1000 * 60))}`;
+            Math.floor((timeDifference % (60 * 60 * 1000)) / (1000 * 60)) >= 10
+                ? Math.floor((timeDifference % (60 * 60 * 1000)) / (1000 * 60))
+                : `0${Math.floor((timeDifference % (60 * 60 * 1000)) / (1000 * 60))}`;
         const seconds =
-            Math.floor((timeDiffrence % (60 * 1000)) / 1000) >= 10
-                ? Math.floor((timeDiffrence % (60 * 1000)) / 1000)
-                : `0${Math.floor((timeDiffrence % (60 * 1000)) / 1000)}`;
-        if (timeDiffrence < 0) {
+            Math.floor((timeDifference % (60 * 1000)) / 1000) >= 10
+                ? Math.floor((timeDifference % (60 * 1000)) / 1000)
+                : `0${Math.floor((timeDifference % (60 * 1000)) / 1000)}`;
+        if (timeDifference < 0) {
             setCountDownTIme({
                 days: "00",
                 hours: "00",
@@ -206,6 +209,7 @@ const Countdown = () => {
                                     {countDownTime?.seconds}
                                 </motion.span>
                             <span className="text-[#FFFFFF] text-xs sm:text-1xl text-center capitalize">{countDownTime?.seconds === 1 ? "Second" : "Seconds"}</span>
+
                         </div>
                     </div>
 
@@ -214,4 +218,5 @@ const Countdown = () => {
         </div>
     );
 };
+
 export default Countdown;
