@@ -38,10 +38,13 @@ const ContactUsPage = () => {
     ];
 
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center p-4">
             <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {contactData.map((contact, index) => (
-                    <ContactCard key={index} {...contact} />
+                    <ContactCard
+                        key={index}
+                        {...contact}
+                    />
                 ))}
             </div>
         </div>
