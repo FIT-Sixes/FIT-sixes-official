@@ -1,5 +1,3 @@
-import React from "react";
-
 // function component
 const AnimatedCard = ({ animation, digit }) => {
     return(

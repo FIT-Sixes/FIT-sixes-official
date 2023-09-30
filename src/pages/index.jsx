@@ -1,5 +1,4 @@
 import ExamplePage from './examples/ExamplePage/ExamplePage';
-import LandingPage from './landing-page/LandingPage';
-import HomePage from './home/HomePage';
+import LandingPage from './LandingPage/LandingPage';
 
-export { ExamplePage, LandingPage, HomePage };
+export { ExamplePage, LandingPage };
