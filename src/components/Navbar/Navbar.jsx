@@ -17,7 +17,7 @@ function Navbar() {
         },
         {
             label: 'About',
-            path: '#',
+            path: '/about',
         },
         {
             label: 'Contact Us',

@@ -1,7 +1,7 @@
 import { useRoutes } from 'react-router-dom';
 
 // local imports 
-import { ExamplePage, LandingPage, ContactUsPage } from './pages';
+import { ExamplePage, LandingPage, ContactUsPage, AboutPage } from './pages';
 
 const Router = () => {
     return useRoutes([
@@ -16,6 +16,10 @@ const Router = () => {
         {
             path: '/contact-us',
             element: <ContactUsPage />,
+        },
+        {
+            path: '/about',
+            element: <AboutPage />,
         },
     ]);
 };
