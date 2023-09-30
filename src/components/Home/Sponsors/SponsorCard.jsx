@@ -24,11 +24,11 @@ export default function SponsorCard({
     return (
         <div className="mx-2 flex flex-col items-center md:my-0 mb-10">
             <div
-                className={`md:h-[19vh] md:w-[22vw] h-[20vh] w-[50vw]  bg-white flex rounded-l-[100px] rounded-r-3xl 
+                className={`md:h-[19vh] md:w-[22vw] h-[20vh] w-[50vw]  bg-white flex rounded-3xl md:rounded-l-[100px] md:rounded-r-3xl 
        ${!sponsors && 'backdrop-blur-lg bg-opacity-40'}
        ${logoClass}`}
             >
-                <img src={logoImg} alt={text} className="  md:w-[8vw] md:h-[19vh] w-[14vw] h-[20vh]" />
+                <img src={logoImg} alt={text} className="  md:block hidden w-[8vw] h-[19vh] " />
                 {sponsors?.length > 0 ? (
                     <AnimatePresence>
                         <motion.img

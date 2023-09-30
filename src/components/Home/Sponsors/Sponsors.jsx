@@ -7,7 +7,7 @@ import fitMoments from '../../../assets/fit moments.png';
 
 export default function Sponsors() {
     return (
-        <div className="md:h-screen flex flex-col  items-center justify-center bg-blue-800 relative">
+        <div className="md:h-screen flex flex-col  items-center justify-center  relative">
             <div className="flex flex-col md:absolute md:top-[10vh] md:left-[18vw] text-center mb-6 md:mt-0  z-0">
                 <span className="text-[10vw] font-serif font-[800] text-cyan-400 opacity-20 z-0 tracking-wider">
                     SPONSORS
@@ -21,7 +21,7 @@ export default function Sponsors() {
                 <SponsorCard
                     logoImg={PlatinumSponsor}
                     text="Platinum Sponsor"
-                    sponsors={[Cambio]}
+                    sponsors={[Cambio,Cambio]}
                 />
                 <SponsorCard logoImg={SilverSponsor} text="Silver Sponsor" />
             </div>
@@ -29,7 +29,7 @@ export default function Sponsors() {
                 <img
                     src={fitMoments}
                     alt="media partner"
-                    className=""
+                    className="md:w-full w-[70vw]"
                 />
                 <span className='text-white text-xl '>Official Media Partner</span>
             </div>

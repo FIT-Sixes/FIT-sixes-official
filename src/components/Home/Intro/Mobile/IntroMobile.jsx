@@ -2,7 +2,7 @@ import StatSection from './StatSection';
 
 export default function IntroMobile() {
     return (
-        <div className="block md:hidden bg-blue-800">
+        <div className="block md:hidden ">
             <div className="text-white text-4xl inline-flex m-5 flex-col">
                 <h1>The Annual Cricket Fiesta</h1>
                 <div className="inline-block mt-4 ">
