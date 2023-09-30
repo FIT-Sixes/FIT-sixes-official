@@ -1,13 +1,13 @@
 // local imports
-import { Countdown, Intro, Awards, Sponsors } from "../../components";
+import { Countdown, Hero, Intro, Awards, Sponsors } from "../../components";
 
 const LandingPage = () => {
     return (
         <>
             {/* example sections */}
             
-            <section id='hero' className="flex items-center justify-center h-screen text-2xl font-bold text-white">
-                Hero Section
+            <section id='hero' className="h-screen">
+                <Hero />
             </section>
 
             <section id='countdown' className="h-screen">
