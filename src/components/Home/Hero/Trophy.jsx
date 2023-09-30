@@ -1,7 +1,8 @@
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
-function Trophy(props) {
+
+const Trophy = (props) => {
     const { nodes, materials } = useGLTF("/logo3d.gltf");
     const meshRef = useRef();
 

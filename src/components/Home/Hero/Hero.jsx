@@ -2,7 +2,6 @@ import { Canvas } from '@react-three/fiber';
 
 // local imports
 import Trophy from './Trophy';
-import './Hero.css';
 
 const Hero = () => {
     return (
