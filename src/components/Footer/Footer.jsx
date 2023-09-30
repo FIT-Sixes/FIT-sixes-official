@@ -11,7 +11,7 @@ const Footer = () => {
                      {/*===========footer left=========*/}                    
 
                   
-                     <div className=" sm:w-2/5 p-4  mb-6 sm:flex items-center justify-center">
+                     <div className="sm:w-2/5 p-4 mb-6 sm:flex items-center justify-center ml-auto">
 
                       <div className="bg-[#D9D9D9] bg-opacity-[0.65] p-4 rounded-[15px] mr-50 flex">
 
@@ -37,33 +37,33 @@ const Footer = () => {
 
 
                     <div>
-                        <ul className='flex items-center justify-center gap-5 pr-8 mt-6'>
+                        <ul className='flex items-center justify-center gap-6 pr-6 mt-6'>
                             <li>
-                            <a className='text-white font-[400]' href='#'>Home</a>
+                            <a className='text-white font-[400] text-[15px]' href='#'>Home</a>
                             </li>
         
                             <li>
-                            <a className='text-white font-[400]' href='#'>Live Score</a>
+                            <a className='text-white font-[400] text-[15px]' href='#'>Live Score</a>
                             </li>
         
                             <li>
-                            <a className='text-white font-[400]' href='#'>About</a>
+                            <a className='text-white font-[400] text-[15px]' href='#'>About</a>
                             </li>
         
                             <li>
-                            <a className='text-white font-[400]' href='#'>Contact Us</a>
+                            <a className='text-white font-[400] text-[15px]' href='#'>Contact Us</a>
                             </li>
         
                         </ul>
                     </div>
 
 
-                    <div className='border-b border-white border-[4px] border-opacity-[0.3] flex w-[110%] justify-center mt-6'></div>
+                    <div className='border-b border-white border-[4px] border-opacity-[0.3] hidden md:flex w-[110%] justify-center mt-6'></div>
 
                       
                       <div className='flex items-center justify-center gap-4 flex-wrap md:gap-3 pr-8 mt-6 mb-5'>
                       
-                        <span className='text-white font-[600] text-[15px]'>
+                        <span className='text-white font-[400] text-[20px]'>
                           Follow us:
                         </span>
         
@@ -96,8 +96,8 @@ const Footer = () => {
                     <div className="w-full sm:w-1/6 p-4 mb-8">
 
 
-                      <div className="w-2/3 ">
-                      <img src={Logo1} alt='' className='h-100 mr-40'/>
+                      <div className="w-3/3 ">
+                      <img src={Logo1} alt='' className='w-32 h-43 md:flex hidden mr-40'/>
                       </div>
 
                       
