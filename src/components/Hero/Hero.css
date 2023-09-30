@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero-background {
+  height: 100vh; 
+  background-image: url('./HeroBg.png');
+  background-size: cover;
+}
