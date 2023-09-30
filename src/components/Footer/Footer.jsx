@@ -3,7 +3,7 @@ import Logo1 from '../../assets/LOGO 1.png';
 
 const Footer = () => {
     return (
-            <footer className='bg-[#00C2FF] bg-opacity-[0.47] pt-19 h-600 '>
+            <footer className='bg-[#00C2FF] bg-opacity-[0.57] pt-19 h-600 '>
 
                 <div className='container'>
                   <div className='sm:flex items-center justify-between md:gap-8 pt-6'>
