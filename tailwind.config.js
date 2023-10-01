@@ -13,10 +13,19 @@ export default {
                 ), url(./src/assets/pattern.webp);`
             }),
             colors: {
-                'gradient-top': '#07334Efa',
-                'gradient-middle': '#151632fa',
-                'gradient-bottom': '#151632fa'
+                'accent': '#20CDD3',
+
+                'gradient-top': '#07334Ef3',
+                'gradient-middle': '#151632f3',
+                'gradient-bottom': '#151632f3'
             },
+            borderRadius: {
+                '4xl': '2rem',
+                '5xl': '2.5rem',
+            },
+            fontSize: {
+                '10xl': '10rem',
+            }
         },
     },
     plugins: [],
