@@ -366,5 +366,7 @@ const Trophy = (props) => {
         </group>
     );
 }
-useGLTF.preload("/logo.gltf");
+
+useGLTF.preload("/logo3d.gltf");
+
 export default Trophy;

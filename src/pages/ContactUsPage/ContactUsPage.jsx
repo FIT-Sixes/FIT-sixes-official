@@ -38,7 +38,7 @@ const ContactUsPage = () => {
     ];
 
     return (
-        <div className="flex justify-center p-4">
+        <div className="flex items-center justify-center h-[90vh] p-4">
             <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {contactData.map((contact, index) => (
                     <ContactCard

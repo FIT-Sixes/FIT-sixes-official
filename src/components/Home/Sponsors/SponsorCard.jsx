@@ -22,7 +22,7 @@ export default function SponsorCard({
     }, [sponsors]);
 
     return (
-        <div className="mx-2 flex flex-col items-center md:my-0 mb-10">
+        <div className="flex flex-col items-center mx-2 mb-10 md:my-0">
             <div
                 className={`md:h-[19vh] md:w-[22vw] h-[20vh] w-[50vw]  bg-white flex rounded-3xl md:rounded-l-[100px] md:rounded-r-3xl 
        ${!sponsors && 'backdrop-blur-lg bg-opacity-40'}
@@ -42,12 +42,12 @@ export default function SponsorCard({
                         />
                     </AnimatePresence>
                 ) : (
-                    <span className=" m-auto flex text-white text-xl">
+                    <span className="flex m-auto text-xl text-white ">
                         Introducing Soon
                     </span>
                 )}
             </div>
-            <span className="md:mt-4 md:ml-10 my-2 text-xl text-white ">{text}</span>
+            <span className="my-2 text-xl text-white md:mt-4 md:ml-10 ">{text}</span>
         </div>
     );
 }

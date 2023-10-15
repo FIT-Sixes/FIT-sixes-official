@@ -112,7 +112,7 @@ const Countdown = () => {
 
     return (
         /* whole container */
-        <div className="h-screen">
+        <div className="">
             {/*whole container 2*/}
             <div className="flex flex-col items-center justify-center w-full h-full gap-8 sm:gap-16">
 
